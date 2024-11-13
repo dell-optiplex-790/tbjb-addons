@@ -6,7 +6,7 @@ let focusInterval;
 addons.register('messageReciever', function(data) {
     if (data.msg.includes('@' + pseudo)) {
         hasPinged = true;
-        data.msg = data.msg.replaceAll('@' + pseudo, '<b>$(' + localStorage.getItem('.config/trollbox/color') + ')@' + pseudo + '</b>$(white)');
+        data.msg = data.msg.replaceAll('@' + pseudo, '<b style="color:' + localStorage.getItem('.config/trollbox/color') + '">@' + pseudo + '</b>');
         if (!document.hasFocus()) {
             if (!focusInterval) {
                 focusInterval = setInterval(function () {
@@ -31,7 +31,7 @@ addons.register('messageReciever', function(data) {
     }
     if (data.msg.includes('@everyone') && everyone) {
         hasPinged = true;
-        data.msg = data.msg.replaceAll('@everyone', '@$(#c3ff00)everyone$(white)');
+        data.msg = data.msg.replaceAll('@everyone', '<b style="color:#c3ff00">@everyone</b>');
         if (!document.hasFocus()) {
             if (!focusInterval) {
                 focusInterval = setInterval(function () {
