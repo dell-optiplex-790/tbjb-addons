@@ -1,3 +1,5 @@
+/* trust me it's secure */
+
 addons.register('messageReciever', function(data) {
 	console.log(data.msg)
 	data.msg = data.msg.replace(/\*\*\*(.*?)\*\*\*/g, '<b><i>$1</i></b>') // bold + italic
